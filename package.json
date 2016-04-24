@@ -1,10 +1,10 @@
 {
   "name": "tcp-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "basic TCP server that creates new files with unique names",
   "main": "tcp_server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test"
   },
   "repository": {
     "type": "git",
@@ -14,7 +14,11 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
     "eslint": "^2.7.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5"
   }
 }
