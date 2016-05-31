@@ -2,36 +2,30 @@ const gulp = require('gulp');
 const mocha = require('gulp-mocha');
 const eslint = require('gulp-eslint');
 
-
-gulp.task('testMocha', () => {
-  return gulp.src('test/**/*_test.js')
-    .pipe(mocha({
-    reporter: 'spec'
-  }));
-});
-
-gulp.task('testEslint:non-testFile', () => {
-  return gulp.src(['./test/**/*test.js'])
+gulp.task('lint:test', () => {
+  return gulp.src('./test/test.js')
   .pipe(eslint({
-    'node': true,
-    'es6': true
-      }
-  ))
-  .pipe(eslint.format())
-  .pipe(eslint.failOnError());
+    envs: [
+      'mocha',
+      'es6'
+    ]
+  }))
+  .pipe(eslint.format());
 });
 
-gulp.task('testEslint:non-testFile', () => {
-  return gulp.src(['index.js', 'lib/**/*.js', 'gulpfile.js'])
+gulp.task('mocha', () => {
+  return gulp.src('./test/test.js')
+    .pipe(mocha());
+});
+
+gulp.task('lint:nontest', () => {
+  return gulp.src('server.js')
   .pipe(eslint({
-    'env': {
-      'node': true,
-      'es6': true
-    }
-  }
-))
-.pipe(eslint.format())
-.pipe(eslint.failOnError());
+    'envs': [
+      'es6'
+    ]
+  }))
+  .pipe(eslint.format());
 });
 
-gulp.task('test', ['testEslint:non-testFile', 'testEslint:testFile', 'testMocha']);
+gulp.task('default', ['lint:test', 'lint:nontest', 'mocha']);

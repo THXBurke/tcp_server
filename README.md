@@ -1,20 +1,13 @@
-#Simple TCP Server
+The most simple TCP logging server that receives TCP requests and saves them into a file.
 
-##To Submit this Assignment
-  * fork this repository
-  * write all of your code in a folder containing your name
-  * push to your repository
-  * submit a pull request to this repository
-  * submit a link to your PR in canvas
+Navigate to tcp_server in command line and start the server by typing in node server.js
 
-##Description
-Create a simple tcp logging server. This server should receive tcp requests and save the request into a file. Each request should be saved into it's own file and you'll have to find something unique to name them. You can use a UUID library or the current time or any other means of having unique strings that you can think of.
+The result should say 'Server happy on 8000'
+
+open another terminal window and run tests with mocha
+
+Go to the browser and in enter http://localhost8000
 
 
-##Rubric
-unique name: 4pts
-logging into file: 4pts
-testing: 2pts
-
-
-I found a helpful example at http://www.hacksparrow.com/tcp-socket-programming-in-node-js.html
+devDependencies used:
+chai, chai-files, gulp, gulp-eslint, gulp-mocha, mocha

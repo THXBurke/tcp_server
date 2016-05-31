@@ -1,14 +1,14 @@
 {
   "name": "tcp-server",
   "version": "1.0.0",
-  "description": "basic TCP server that creates new files with unique names",
-  "main": "tcp_server.js",
+  "description": "basic TCP server",
+  "main": "server.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "THXBurke"
+    "url": ""
   },
   "author": "RBurke",
   "license": "MIT",
